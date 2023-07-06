@@ -1228,7 +1228,7 @@ static void ieee80211_chswitch_post_beacon(struct ieee80211_sub_if_data *sdata)
 		return;
 	}
 
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 15, 0))
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 18, 0))
 	cfg80211_ch_switch_notify(sdata->dev, &sdata->reserved_chandef, 0);
 #else
 	cfg80211_ch_switch_notify(sdata->dev, &sdata->reserved_chandef);
@@ -1419,7 +1419,7 @@ ieee80211_sta_process_chanswitch(struct ieee80211_sub_if_data *sdata,
 	mutex_unlock(&local->mtx);
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 15, 0))
-	cfg80211_ch_switch_started_notify(sdata->dev, &csa_ie.chandef, 0,
+	cfg80211_ch_switch_started_notify(sdata->dev, &csa_ie.chandef,
 					  csa_ie.count, 0);
 #else
 	cfg80211_ch_switch_started_notify(sdata->dev, &csa_ie.chandef,
