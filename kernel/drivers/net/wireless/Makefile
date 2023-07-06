@@ -5,7 +5,7 @@
 
 obj-$(CONFIG_WLAN_VENDOR_REALTEK) += realtek/
 obj-$(CONFIG_SPARD_WLAN_SUPPORT) += uwe5622/
-obj-$(CONFIG_XR_WLAN_SUPPORT) += xr829/
+obj-$(CONFIG_XR829_WLAN) += xr829/
 
 
 # 16-bit wireless PCMCIA client drivers
