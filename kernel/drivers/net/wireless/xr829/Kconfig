@@ -3,7 +3,6 @@ config XR829_WLAN
 	default n
 	depends on CFG80211
 	depends on CRYPTO
-	depends on MAC80211_MESH
 	help
 	  To compile this code as a module, choose M here.
 config XR829_SUSPEND_POWER_OFF

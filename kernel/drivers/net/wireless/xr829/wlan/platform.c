@@ -79,7 +79,7 @@ int xradio_wlan_power(int on)
 
 void xradio_bt_power(int on_off)
 {
-	sunxi_bluetooth_set_power(on_off);
+	//sunxi_bluetooth_set_power(on_off);
 	mdelay(100);
 }
 
