@@ -164,6 +164,18 @@
 		reset-gpios = <&pio 6 18 GPIO_ACTIVE_LOW>;  /* PG18 */
 		post-power-on-delay-ms = <200>;
 	};
+	wlan:wlan {
+		compatible = "allwinner,sunxi-wlan";
+		//clocks = <&wifi_pwrseq>;
+		//wlan_power = "vcc33-wifi";
+		//wlan_io_regulator = "vcc-wifi-io";
+		wlan_busnum = <0>;
+		wlan_usbnum = <3>;
+		wlan_regon = <&pio 6 11 0>;
+		//wlan_hostwake = <&pio PH 1 6 0 0 0>;
+		//wlan_clk_gpio = <&pio 6 10>;
+		status = "okay";
+	};
 };
 
 &usbphy {
@@ -266,8 +278,9 @@
 	vqmmc-supply = <&reg_vcc_wifi_io>;
 	mmc-pwrseq = <&wifi_pwrseq>;
 	bus-width = <4>;
-	non-removable;
-	mmc-ddr-1_8v;
+	//non-removable;
+	//mmc-ddr-1_8v;
+    no-1-8-v;
 	status = "okay";
 };
 
