@@ -303,6 +303,8 @@ struct sunxi_mmc_host {
 	bool		use_new_timings;
 };
 
+#include "sunxi-mmc-export.h"
+
 static int sunxi_mmc_reset_host(struct sunxi_mmc_host *host)
 {
 	unsigned long expire = jiffies + msecs_to_jiffies(250);
@@ -1358,6 +1360,10 @@ static int sunxi_mmc_resource_request(struct sunxi_mmc_host *host,
 		ret = -EINVAL;
 		goto error_disable_mmc;
 	}
+
+	static u32 no=0;
+
+	sunxi_mmc_reg_ex_res_inter(host,no++);
 
 	return devm_request_threaded_irq(&pdev->dev, host->irq, sunxi_mmc_irq,
 			sunxi_mmc_handle_manual_stop, 0, "sunxi-mmc", host);

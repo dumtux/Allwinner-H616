@@ -495,4 +495,5 @@ source "drivers/misc/habanalabs/Kconfig"
 source "drivers/misc/uacce/Kconfig"
 source "drivers/misc/pvpanic/Kconfig"
 source "drivers/misc/sunxi-addr/Kconfig"
+source "drivers/misc/sunxi-rf/Kconfig"
 endmenu
