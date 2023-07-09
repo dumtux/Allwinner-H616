@@ -3,8 +3,6 @@
 ## Tested Hardwares
 
 * [Yuzuki Chameleon](https://github.com/YuzukiHD/YuzukiChameleon)
-  - XR829 wireless module driver is not added yet. We are working on this.
-  
 * [BigTreeTech CB1](https://github.com/bigtreetech/CB1)
 
 ## Build Prerequisites
@@ -42,6 +40,17 @@ sudo ./build.sh
 - Compile information output directory
 
     output/debug/
+
+
+## XR829 Wi-Fi driver
+
+After flashing the built OS image into an SD card or on-board EMMC, hard-copy the [driver files](./sandbox/xr829/).
+*Feel free to add this driver in the right way.*
+
+```
+sudo cp ./sandbox/xr829/* [MOUNTPOINT]/lib/firmware/
+sudo mv [MOUNTPOINT]/lib/firmware/sdd_xr829_40M.bin sdd_[MOUNTPOINT]/lib/firmware/xr829.bin
+```
 
 ## Reference
 
